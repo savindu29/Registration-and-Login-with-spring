@@ -37,6 +37,6 @@ public class AppUserService implements UserDetailsService {
 
         appUserRepository.save(appUser);
         // TODO: Send confirmation and token
-        return "";
+        return "saved!!";
     }
 }
