@@ -1,5 +1,6 @@
-package com.savindu.RegistrationandLoginwithspring.appuser;
+package com.savindu.RegistrationandLoginwithspring.entities;
 
+import com.savindu.RegistrationandLoginwithspring.entities.enums.AppUserRole;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
