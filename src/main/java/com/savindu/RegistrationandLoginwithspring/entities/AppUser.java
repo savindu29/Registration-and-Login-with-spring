@@ -17,17 +17,17 @@ import java.util.Collections;
 public class AppUser implements UserDetails {
     @Id
     @SequenceGenerator(
-            name="student_sequence",
-            sequenceName = "student_sequence",
+            name="app_user_sequence",
+            sequenceName = "app_user_sequence",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "student_sequence"
+            generator = "app_user_sequence"
     )
     private Long id;
-    private String name;
-    private String username;
+    private String firstname;
+    private String lastname;
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
@@ -36,9 +36,9 @@ public class AppUser implements UserDetails {
     private boolean enabled;
 
 
-    public AppUser(String name, String username, String email, String password, AppUserRole appUserRole, Boolean locked, boolean enabled) {
-        this.name = name;
-        this.username = username;
+    public AppUser(String firstname, String lastname, String email, String password, AppUserRole appUserRole) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
@@ -60,9 +60,11 @@ public class AppUser implements UserDetails {
 
     @Override
     public String getUsername() {
-        return username;
+        return email;
     }
-
+    public String getFirstname(){
+        return firstname;
+    }
     @Override
     public boolean isAccountNonExpired() {
         return true;
